@@ -1,0 +1,18 @@
+{% extends "layouts/default.html" %}
+{% block title %}Blog application in Common Lisp{% endblock %}
+{% block content %}
+<div class="page">
+  <h1>Drafts</h1>
+  <main>
+    {% for draft in drafts %}
+    <div key={draft.id} class="draft">
+      <div class="post-wrapper">
+      <h2><a href="/posts/{{draft.id}}">{{draft.title}}</a></h2>
+      <small>By {{author}}</small>
+      <p>{{draft.content}}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </main>
+</div>
+{% endblock %}

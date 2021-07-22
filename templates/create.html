@@ -1,0 +1,33 @@
+{% extends "layouts/default.html" %}
+{% block title %}Blog application in Common Lisp{% endblock %}
+{% block content %}
+<div class="create-page">
+  <form action="/posts" method="POST">
+    <h1>Create Draft</h1>
+    <input
+    placeholder="Title"
+    type="text"
+      name="title"
+    />
+    <input
+    placeholder="Author (email address)"
+    type="text"
+      name="email"
+    />
+    <textarea
+      cols="50"
+      placeholder="Content"
+      rows="8"
+      name="content"
+      ></textarea>
+      <input
+	type="submit"
+	value="Create"
+	/>
+      <a class="back" href="#">
+	or Cancel
+      </a>
+  </form>
+</div>
+
+{% endblock %}

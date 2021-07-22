@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		 Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		 'Segoe UI Symbol';
+    background: rgba(0, 0, 0, 0.05);
+}
+input,
+textarea {
+    font-size: 16px;
+}
+button {
+    cursor: pointer;
+}
+.layout {
+    padding: 0 2rem;
+}
+nav {
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+}
+.bold {
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+}
+.left a[data-active='true'] {
+    color: gray;
+}
+a + a {
+    margin-left: 1rem;
+}
+.right {
+    margin-left: auto;
+}
+.right a {
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+}
+.post {
+    background: white;
+    transition: box-shadow 0.1s ease-in;
+}
+.post:hover {
+    box-shadow: 1px 1px 3px #aaa;
+}
+.post + .post {
+    margin-top: 2rem;
+}
+.post-page {
+    background: white;
+    padding: 2rem;
+}
+.actions {
+    margin-top: 2rem;
+}
+button {
+    background: #ececec;
+    border: 0;
+    border-radius: 0.125rem;
+    padding: 1rem 2rem;
+}
+button + button {
+    margin-left: 1rem;
+}
+
+.create-page {
+    background: white;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input[type='text'],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 0.25rem;
+    border: 0.125rem solid rgba(0, 0, 0, 0.2);
+}
+input[type='submit'] {
+    background: #ececec;
+    border: 0;
+    padding: 1rem 2rem;
+}
+.back {
+    margin-left: 1rem;
+}
+
+.signup-page {
+    background: white;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+}
+.signup-page input[type='text'] {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 0.25rem;
+    border: 0.125rem solid rgba(0, 0, 0, 0.2);
+}
+.signup-page input[type='submit'] {
+    background: #ececec;
+    border: 0;
+    padding: 1rem 2rem;
+}
+.signup-page .back {
+    margin-left: 1rem;
+}
+
+.draft {
+    background: white;
+    transition: box-shadow 0.1s ease-in;
+}
+.draft:hover {
+    box-shadow: 1px 1px 3px #aaa;
+}
+.draft + .draft {
+    margin-top: 2rem;
+}
+.post-wrapper {
+    color: inherit;
+    padding: 2rem;
+}

@@ -1,0 +1,25 @@
+{% extends "layouts/default.html" %}
+{% block title %}Blog application in Common Lisp{% endblock %}
+{% block content %}
+<div class="signup-page">
+  <form >
+    <h1>Signup user</h1>
+    <input 
+      placeholder="Name"
+      type="text"
+      />
+    <input
+      placeholder="Email address"
+      type="text"
+      />
+    <input
+      type="submit"
+      value="Signup"
+      />
+    <a class="back" href="#">
+      or Cancel
+    </a>
+  </form>
+</div>
+
+{% endblock %}
