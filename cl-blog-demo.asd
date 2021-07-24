@@ -18,7 +18,9 @@
                ;; for DB
                "datafly"
                "sxql"
-	       "mito")
+	       "mito"
+	       ;; Markdown
+	       "cl-markdown")
   :components ((:module "src"
                 :components
                 ((:file "main" :depends-on ("config" "view" "db"))

@@ -42,6 +42,10 @@
 (defun get-param (name parsed)
   (cdr (assoc name parsed :test #'string=)))
 
+(defun format-goss (html)
+  "Format result from get-output-stream-string"
+  (format nil "~a" (get-output-stream-string html)))
+
 ;;
 ;; Routing rules
 
@@ -74,13 +78,16 @@
   (redirect "/")))
 
 (defroute "/posts/:id" (&key id)
-  (let ((post (mito:find-dao 'post :id id)))
+  (let ((post (mito:find-dao 'post :id id))
+	(html (make-string-output-stream)))
     (if (equal (slot-value post 'published) t)
 	(progn
 	  (incf (slot-value post 'views))
 	  (mito:save-dao post))
 	nil)
-    (render #P"show.html" (list :post post))))
+    (cl-markdown:markdown (slot-value post 'content) :stream html)
+    (render #P"show.html" (list :post post
+				:html (format-goss html)))))
 
 (defroute "/posts/:id/publish" (&key id)
   (let ((post (mito:find-dao 'post :id id)))

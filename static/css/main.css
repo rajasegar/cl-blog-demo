@@ -35,7 +35,7 @@ nav {
 .bold {
     font-weight: bold;
 }
-a {
+nav a {
     text-decoration: none;
     color: #000;
     display: inline-block;
@@ -140,4 +140,9 @@ input[type='submit'] {
 .post-wrapper {
     color: inherit;
     padding: 2rem;
+}
+
+.markdown a {
+    text-decoration: underline;
+    color: blue;
 }

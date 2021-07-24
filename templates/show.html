@@ -8,7 +8,9 @@
       <div class="post-wrapper">
 	<h2>{{post.title}}</h2>
 	<small>By {{author}}</small>
-	<p>{{post.content}}</p>
+	<div class="markdown">
+	{{html|safe|escape}}
+	</div>
 	<p>
       {% if not post.published %}
       <a href="/posts/{{post.id}}/publish">Publish</a>
